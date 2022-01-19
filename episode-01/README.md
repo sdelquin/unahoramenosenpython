@@ -20,8 +20,8 @@ Otros desafios similares al Advent of Code:
 
 ## Python 3.10 Features
 
-https://realpython.com/python310-new-features/
-https://benhoyt.com/writings/python-pattern-matching/
+- https://realpython.com/python310-new-features/
+- https://benhoyt.com/writings/python-pattern-matching/
 
 ## Vulture
 
@@ -29,4 +29,4 @@ https://github.com/jendrikseipp/vulture
 
 ## Walrus operator
 
-`:=`
+- https://realpython.com/python-walrus-operator/

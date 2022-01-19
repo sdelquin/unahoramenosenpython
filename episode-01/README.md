@@ -1,5 +1,7 @@
 # Episodio 1
 
+19 de enero de 2022
+
 ## Advent of Code
 
 https://adventofcode.com/2021/day/1

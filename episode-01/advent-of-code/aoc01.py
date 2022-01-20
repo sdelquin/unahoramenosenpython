@@ -1,4 +1,5 @@
 import itertools
+import timeit
 
 
 def load_data(filename):
@@ -62,6 +63,12 @@ def solution4(filename):
     return sum(1 for i, j in zip(data, data[1:]) if j - i > 0)
 
 
+def solution4b(filename):
+    '''Esta solución está basada en los comentarios de Cristian cmaureir'''
+    data = list(load_data(filename))
+    return sum(j > i for i, j in zip(data, data[1:]))
+
+
 def solution5(filename):
     return sum(
         1 for value1, value2 in itertools.pairwise(load_data(filename)) if value2 > value1
@@ -74,8 +81,9 @@ def check(solution):
     assert solution('input-sdelquin.txt') == 1681
 
 
-check(solution1)
-check(solution2)
-check(solution3)
-check(solution4)
-check(solution5)
+items = {name: ref for name, ref in globals().items() if name.startswith('solution')}
+for name, ref in items.items():
+    print(f'Checking {name}...')
+    elapsed_time = timeit.timeit('check(ref)', globals=globals(), number=1000)
+    print(f'Time: {elapsed_time}')
+    print('----------------')

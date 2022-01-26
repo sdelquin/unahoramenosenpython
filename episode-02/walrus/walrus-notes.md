@@ -1,8 +1,8 @@
 ## Walrus Operator
 
-Nombre técnico: _Assignment expression operator_
+- Nombre técnico: _Assignment expression operator_
 
-sintax and semantic:
+- Sintax and semantic:
 
 > In most contexts where arbitrary Python expressions can be used, a named expression can
 > appear. This is of the form NAME := expr where expr is any valid Python expression other
@@ -102,7 +102,7 @@ TypeError: 'n' is an invalid keyword argument for print()
 
 ## Ejemplos de uso:
 
-## Para evitar llamadas duplicadas
+### Para evitar llamadas duplicadas
 
 Ver [walrus_sample_01.py](walrus_sample_01.py)
 

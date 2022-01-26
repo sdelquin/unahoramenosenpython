@@ -195,6 +195,8 @@ paréntesis para establecer la jerarquía, pero no más paréntesis de los neces
 
 ## Score
 
+| Concepto                 | Nivel |
+|--------------------------|-------|
 | Utilidad                 | ██░░░ |
 | Revolucionario           | █░░░░ |
 | Usa nombres divertidos   | █████ | 

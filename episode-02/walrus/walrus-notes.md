@@ -8,7 +8,6 @@
 > appear. This is of the form NAME := expr where expr is any valid Python expression other
 > than an unparenthesized tuple, and NAME is an identifier.
 
-
 def statement [Sentencia] -> hace algo
 
 def expression [Expresión] -> evalua un valor
@@ -106,7 +105,6 @@ TypeError: 'n' is an invalid keyword argument for print()
 
 Ver [walrus_sample_01.py](walrus_sample_01.py)
 
-
 ### En un bucle While:
 
 ```python
@@ -131,7 +129,6 @@ de la otra.
 Este para mi es el caso más claro:
 
 Ver [walrus_sample_02.py](walrus_sample_02.py).
-
 
 ### Compresiones
 
@@ -195,11 +192,11 @@ paréntesis para establecer la jerarquía, pero no más paréntesis de los neces
 
 ## Score
 
-| Concepto                 | Nivel |
-|--------------------------|-------|
-| Utilidad                 | ██░░░ |
-| Revolucionario           | █░░░░ |
-| Usa nombres divertidos   | █████ | 
+| Concepto               | Nivel |
+| ---------------------- | ----- |
+| Usa nombres divertidos | █████ |
+| Utilidad               | ██░░░ |
+| Revolucionario         | █░░░░ |
 
 ### Enlaces
 

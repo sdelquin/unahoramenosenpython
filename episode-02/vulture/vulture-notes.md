@@ -46,6 +46,36 @@ de módulos no usados como la asignación a variables sin uso.
 
 Se puede integrar con herramientas de CI
 
+### Marcando varaibles sin usar
+
+Si anteponemos un caracter '_' en el nombre de una variable, usa variable no será reportada
+como sin usar, aunque efectivamente no se use en ningún otro sitio. Esto es útil, por
+ejemplo, para funciones que retornan tuplas como resultado: `_x, y = get_pos()`.
+
+## Minimum confidence
+
+Se puede usar el flag `--min-confidence` para limitar el rango de valores de confianza que
+se debe mostrar
+
+## Configuracion
+
+Se pueden almacenar las opciones de linea de comandos en un fichero
+que debe llamarse `pyproject.toml`:
+
+```
+[tool.vulture]
+exclude = ["file*.py", "dir/"]
+ignore_decorators = ["@app.route", "@require_*"]
+ignore_names = ["visit_*", "do_*"]
+make_whitelist = true
+min_confidence = 80
+paths = ["myscript.py", "mydir"]
+sort_by_size = true
+verbose = true
+```
+
+Las opciones de línea de comando siempre tendrán precedencia sobre las opciones en el
+fichero.
 
 ## Enlaces:
 

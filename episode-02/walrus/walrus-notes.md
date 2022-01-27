@@ -121,12 +121,12 @@ while name := input('Como te llamas:'):
     print(f"Hola, {name}!")
 ```
 
-Además, se evita otro error común que sería cambiar una de las expresiones pero olvidarnos
+Además, se evita otro error común que sería cambiar una de las sentencias pero olvidarnos
 de la otra.
 
 ### Expresiones regulares
 
-Este para mi es el caso más claro:
+Este es para mí el caso más claro:
 
 Ver [walrus_sample_02.py](walrus_sample_02.py).
 
@@ -189,6 +189,20 @@ True
 
 Son similares a las del operador `=`, dejar espacios alrededor del operador y usar
 paréntesis para establecer la jerarquía, pero no más paréntesis de los necesarios.
+
+## Integraci'on continua
+
+Se puede usar un _pre-commit_ _hook_ para que Vulture se ejecute en cada
+_Commit_to run Vulture before each commit. Para eso hay que tener el siguiente contenido
+en el fichero `.pre-commit-config.yaml` dentro de tu repositorio.
+
+```
+repos:
+  - repo: https://github.com/jendrikseipp/vulture
+    rev: 'v2.3'  # or any later Vulture version
+    hooks:
+      - id: vulture
+```
 
 ## Score
 

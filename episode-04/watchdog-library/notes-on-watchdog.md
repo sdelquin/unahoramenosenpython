@@ -33,10 +33,13 @@ pip install watchdog
 
 ### Ejemplo
 
-Vamos a ver un ejemplo"
+Vamos a ver un ejemplo sencillo, solo monstrará un mensaje por pantalla cada
+vez que se cree un fichero. En primer lugar realizamos una serie de
+imporaciones:
 
 ```python
 import time
+
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 ```
@@ -46,54 +49,61 @@ recibir las notificaciones del sistema de ficheros y actuará en consecuencia.
 En esta caso usaremos la clase `FileSystemEventHandler`, que es la clase base
 para los manejadores de eventos, aunque veremos que normalmente se suele usar
 una clase derivada de esta, ya sea algunas de las incluidas con el propio
-_watchdog_, o una clase nuestra. 
+_watchdog_, o una nuestra. 
 
-En la clase Base hay varios metodos que podemos utilizar o redefinir. El
-más básico es el método `dispatch` que recive **todos** los eventos. La
-implemntación base lo que hace es reenviar los eventos a otrosmétodos, que se
+En la clase hay varios metodos que podemos utilizar o redefinir. El
+más básico es el método `dispatch` que recibe **todos** los eventos. La
+implementación base lo que hace es reenviar los eventos a otros métodos, que se
 corresponden con los tipos de eventos que se pueden producir. Por ejemplo, el
 método `on_created` será llamado por `dispatch` para aquellos eventos
-que sean resultado de la creación de un fichero o directorio.
+que sean resultado de la creación de un fichero o directorio. Otros métodos que
+podemos reescribir son:
 
+- `on_deleted`: llamado cuando se borra un fichero o directorio.
+
+- `on_modified`: llamado cuando un fichero o directorio es modificado.
+
+- `on_moved`: llamado cuando un fichero o directorio se renombra o se mueve a
+  otra carpeta.
+
+- `on_closed`: es llamado cuando se cierra un fichero abierto en modo de
+  escritura.
+
+- `on_any_event`: Llamado par todos los eventos. 
 
 ```python
 my_event_handler = FileSystemHandler()
 ```
 
-Ahora que hemos creado el _handler_, podemos escribir el código a ejecutar
-cuando se produzcan los eventos.
+Vamos a crear una Handler propio, derivado de `FileSystemEventHandler`, y
+reescribiremos el método `on_created`:
 
-vamos a definir uno para cuando se crea un fichero:
-
-```python
-def on_created(event):
-    print(f"hay un nuevo {event.src_path} fichero!")
-```
-
-Ahora podemos asignar el evento a esta función:
 
 ```python
-my_event_handler.on_created = on_created
+class SimpleHandler(FileSystemEventHandler):
+
+    def on_created(self, event):
+        print(f"hay un nuevo fichero {event.src_path}!")
 ```
 
 Ahora necesitamos otro objeto, conocido como el observador (*Observer*),
-que sera el que monitoriza el sistema de ficheros.
+que sera el que realmente monitoriza el sistema de ficheros. Para crearlo se le
+pasa como primer parámetro una instancia de nuestro handler o manejador y como
+segundo la ruta del sistema de archivos que queremos monitorizar. Tiene
+otros parámetros adicioanles, en este ejemplo usaremos también `recursive`, que
+sirve par indicar si debemos monitorizar solo la carpeta indicada o la carpeta
+mas todas sus subcarpetas.
 
-Vamos a crearlo:
 
 ```python
-path = "."
-go_recursively = True
-
-my_observer = Observer()
-my_observer.schedule(my_event_handler, path, recursive=go_recursively)
+my_observer.schedule(SimpleHandler(), '.', recursive=True)
 ```
 
 Ya hemos creado el observador, y le hemos pasado nuestro manejador de
-eventos. Lo hemos puesto vigilando el directorio actual (`.`). Indicamos
-que estamos interesados también en los subdirectorios.
+eventos. Lo hemos puesto vigilando el directorio actual (`.`), indicando
+también que estamos interesados en los subdirectorios.
 
-Ahora ya podemos iniciar el observador. Este proceso inicia un ciclo
+Ahora ya podemos iniciar el observador. Este proceso inicia un bucle
 infinito, ya que la condición de salida del _while_ es la constante
 `True`, que obviamente nunca va a cambiar de valor. La única manera
 de salir de ese bucle infinito es provocando una interrupción en el nivel
@@ -103,7 +113,7 @@ superior del sistema operativo, con la combinación ++ctrl+c++.
 my_observer.start()
 try:
     while True:
-        time.sleep(1)
+        time.sleep(10)
 except KeyboardInterrupt:
     my_observer.stop()
     my_observer.join()
@@ -124,3 +134,53 @@ fsutil file createnew hola.txt 0
 
 En la primera terminal, la que está ejecutando nuestro código `watchdog`,
 deberíamos ver el mensaje indicando la creación del fichero.
+
+### Otros Handlers o manejadores
+
+Además de poder crear nuestras propias clases de _Handlers_, watchdog
+incluye otras clases derivadas más especializadas y que puede que nos sean
+útiles.
+
+La clase `PatternMatchingEventHandler` nos permite definir los tipos de
+archivos en los que estamos interesados, y solo se nos informaran de los
+eventos que afe3ctan a ese tipo de ficheros. Por ejemplo, podemos monitorizar
+solo los cambios que afectan a ficheros `.PDF` o que ignore determionados
+directorios, etc...
+
+La clase `RegexMatchingEventHandler` es similar, pero nos deja usar expresiones
+regulares para definir los ficheros que nos interesan.
+
+Por último, la clase `LoggingEventHandler` es como la clase base pero envia a
+un log todos los eventos que se producen.
+
+### Utilidades de shell
+
+Si hemos instalado wathdog, disponemos de una utilidad de línea de comandos
+llamada `watchmedo`. Con `watchmedo --help` podemos obtener más información
+sobre su uso.
+
+El siguiente ejemplo muestra en un log todos los cambios realizados sobre
+ficheros con las extensiones `*.txt` o `*.py`, ignorando los eventos
+relacionados con directorios.
+
+```shell
+watchmedo log \
+    --patterns="*.py;*.txt" \
+    --ignore-directories \
+    --recursive
+```
+
+Con la suborden `shell-command` podemos ejecutar un comanmdo de shell ante
+cualquiera cambio monitorizado:
+
+```shell
+watchmedo shell-command \
+    --patterns="*.py;*.txt" \
+    --recursive \
+    --command='echo "${watch_src_path}"'
+```
+
+Podemos predefinir en un fichero `tricks.yaml` diferentes operrciones a
+realizar cuando se produzcan eventos en el sistema de ficheros. La sintaxis no
+se complicada y se puede consultar en la [página de documentación de
+Watchdog](https://python-watchdog.readthedocs.io/)

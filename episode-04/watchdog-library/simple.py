@@ -14,7 +14,7 @@ class SimpleHandler(FileSystemEventHandler):
 
 def main():
     my_observer = Observer()
-    my_observer.schedule(my_event_handler, '.', recursive=True)
+    my_observer.schedule(SimpleHandler(), '.', recursive=True)
     my_observer.start()
     try:
         while True:

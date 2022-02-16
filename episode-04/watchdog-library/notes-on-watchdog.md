@@ -61,7 +61,7 @@ podemos reescribir son:
 
 - `on_deleted`: llamado cuando se borra un fichero o directorio.
 
-- `on_modified`: llamado cuando un fichero o directorio es modificado.
+- `on_modified`: llamado cuando se modifica un fichero o directorio.
 
 - `on_moved`: llamado cuando un fichero o directorio se renombra o se mueve a
   otra carpeta.
@@ -71,12 +71,10 @@ podemos reescribir son:
 
 - `on_any_event`: Llamado par todos los eventos. 
 
-```python
-my_event_handler = FileSystemHandler()
-```
 
-Vamos a crear una Handler propio, derivado de `FileSystemEventHandler`, y
-reescribiremos el método `on_created`:
+Vamos a crear en primer lugar
+nuestra propia clase para el Handler, derivado de `FileSystemEventHandler`, y
+sobreescribiremos el método `on_created`:
 
 
 ```python
@@ -184,3 +182,11 @@ Podemos predefinir en un fichero `tricks.yaml` diferentes operrciones a
 realizar cuando se produzcan eventos en el sistema de ficheros. La sintaxis no
 se complicada y se puede consultar en la [página de documentación de
 Watchdog](https://python-watchdog.readthedocs.io/)
+
+### Nota de cata
+
+| Concepto               | Nivel |
+| ---------------------- | ----- |
+| Usa nombres divertidos | █████ |
+| Utilidad               | ████░ |
+| Revolucionario         | ███░░ |

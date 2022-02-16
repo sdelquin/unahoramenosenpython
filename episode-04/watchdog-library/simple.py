@@ -5,14 +5,11 @@ import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-my_event_handler = FileSystemEventHandler()
 
+class SimpleHandler(FileSystemEventHandler):
 
-def on_created(event):
-    print(f"hay un nuevo fichero {event.src_path}!")
-
-
-my_event_handler.on_created = on_created
+    def on_created(self, event):
+        print(f"hay un nuevo fichero {event.src_path}!")
 
 
 def main():
@@ -29,4 +26,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

@@ -47,7 +47,7 @@ def post_message():
     message = request.form['message']
     if message:
         filename = f'{uuid.uuid4().hex}.json'
-        with open(filename, 'w') as fout:
+        with open(filename, 'w', encoding='utf-8') as fout:
             json.dump({
                 "name": name or "Anonymous",
                 "message": message,
@@ -64,7 +64,7 @@ def get_all_messages():
     )
     for filename in all_files:
         if filename.name.endswith('.json'):
-            with open(filename) as fin:
+            with open(filename, encoding="utf-8") as fin:
                 yield json.load(fin)
 
 

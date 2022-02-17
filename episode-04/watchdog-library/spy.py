@@ -11,7 +11,7 @@ class ChatEventHandler(FileSystemEventHandler):
 
     def on_created(self, event):
         filename = event.src_path
-        with open(filename) as fin:
+        with open(filename, encoding='utf-8') as fin:
             chat = json.load(fin)
             print("{name} says: {message}".format(**chat))
 

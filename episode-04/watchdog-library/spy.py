@@ -2,6 +2,7 @@
 
 import time
 import json
+import pathlib
 
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
@@ -17,7 +18,7 @@ class ChatEventHandler(FileSystemEventHandler):
 
 
 def main():
-    HOME_DIR = '.'
+    HOME_DIR = pathlib.Path('./')
     print("Starting ChatDog", end=" ")
     event_handler = ChatEventHandler()
     observer = Observer()

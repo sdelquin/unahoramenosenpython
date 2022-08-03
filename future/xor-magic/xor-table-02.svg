@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="201mm"
+   height="136mm"
+   viewBox="0 0 201 136"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="xor-table-02.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.71000982"
+     inkscape:cx="397.17761"
+     inkscape:cy="334.50242"
+     inkscape:window-width="1918"
+     inkscape:window-height="1068"
+     inkscape:window-x="507"
+     inkscape:window-y="57"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="90.537697"
+       y="339.25397"
+       width="562.59796"
+       height="279.37735"
+       id="rect19483" />
+    <rect
+       x="138.42062"
+       y="70.775299"
+       width="388.1842"
+       height="455.66568"
+       id="rect5452" />
+    <rect
+       x="162.2384"
+       y="129.12135"
+       width="447.32416"
+       height="392.49542"
+       id="rect2740" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Fondo"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <rect
+       style="fill:#d5e5ff;stroke-width:0.264583px;-inkscape-stroke:none;stop-color:#000000"
+       id="rect78547"
+       width="201.8735"
+       height="137.16252"
+       x="-0.29766986"
+       y="-0.85144383" />
+    <rect
+       style="fill:#000000;stroke-width:0.264583px;-inkscape-stroke:none;stop-color:#000000"
+       id="rect78763"
+       width="166.65874"
+       height="116.14289"
+       x="16.613811"
+       y="10.488544"
+       ry="6" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text2738"
+       style="font-size:18.6667px;line-height:1.25;font-family:'Trebuchet MS';-inkscape-font-specification:'Trebuchet MS';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2740)" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text5450"
+       style="font-size:18.6667px;line-height:1.25;font-family:'Trebuchet MS';-inkscape-font-specification:'Trebuchet MS';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect5452)" />
+    <text
+       xml:space="preserve"
+       style="font-size:9.30725px;line-height:1.25;font-family:'Trebuchet MS';-inkscape-font-specification:'Trebuchet MS';letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:0.264583"
+       x="75.075172"
+       y="30.91457"
+       id="text14874"><tspan
+         sodipodi:role="line"
+         id="tspan14872"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code Bold';fill:#00ff00;stroke-width:0.264583"
+         x="75.075172"
+         y="30.91457">0 ⊕ 0 = 0</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code Bold';fill:#00ff00;stroke-width:0.264583"
+         x="75.075172"
+         y="42.850033"
+         id="tspan15060">1 ⊕ 0 = 1</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#808080;stroke-width:0.264583"
+         x="75.075172"
+         y="54.785496"
+         id="tspan15062">0 ⊕ 1 = 1</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#808080;stroke-width:0.264583"
+         x="75.075172"
+         y="66.720963"
+         id="tspan15064">1 ⊕ 1 = 0</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffffff;stroke-width:0.264583"
+         x="75.075172"
+         y="78.656425"
+         id="tspan14878" /></text>
+    <circle
+       style="fill:#ff0000;stroke-width:0.264583px;-inkscape-stroke:none;stop-color:#000000"
+       id="path96773"
+       cx="24.367348"
+       cy="18.197357"
+       r="4" />
+    <circle
+       style="fill:#ffd13c;stroke-width:0.264583px;-inkscape-stroke:none;stop-color:#000000;fill-opacity:1"
+       id="circle96877"
+       cx="36.009026"
+       cy="18.197357"
+       r="4" />
+    <circle
+       style="fill:#00c800;stroke-width:0.264583px;-inkscape-stroke:none;stop-color:#000000;fill-opacity:1"
+       id="circle96879"
+       cx="47.121536"
+       cy="18.197357"
+       r="4" />
+    <text
+       xml:space="preserve"
+       style="font-size:13.5354px;line-height:1.25;font-family:'Trebuchet MS';-inkscape-font-specification:'Trebuchet MS';letter-spacing:0px;word-spacing:0px;fill:#00ff00;stroke-width:0.264583"
+       x="61.656849"
+       y="92.398636"
+       id="text56725"><tspan
+         sodipodi:role="line"
+         id="tspan56723"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.5354px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code Bold';fill:#00ff00;stroke-width:0.264583"
+         x="61.656849"
+         y="92.398636">x ⊕ 0 = x</tspan></text>
+  </g>
+</svg>

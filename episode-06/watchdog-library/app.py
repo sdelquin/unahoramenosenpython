@@ -6,13 +6,14 @@ from pathlib import Path
 from flask import Flask
 from flask import redirect
 from flask import request
-
+from flask import render_template
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
+    return render_template('index.html', name=name)
     return "\n".join([
         '<html>',
         '<head>',
